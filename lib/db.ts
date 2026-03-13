@@ -8,7 +8,14 @@ export async function query<T extends QueryResultRow = any>(
   sql: string,
   params: any[] = []
 ): Promise<T[]> {
-  const client = new Client({ connectionString: process.env.DATABASE_URL });
+
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
+  });
+
   try {
     await client.connect();
     const result = await client.query<T>(sql, params);
@@ -33,7 +40,14 @@ export async function queryOne<T extends QueryResultRow = any>(
  * Execute a SQL statement that does not return rows (INSERT, UPDATE, DELETE)
  */
 export async function execute(sql: string, params: any[] = []): Promise<void> {
-  const client = new Client({ connectionString: process.env.DATABASE_URL });
+
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
+  });
+
   try {
     await client.connect();
     await client.query(sql, params);
