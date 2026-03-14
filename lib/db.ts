@@ -1,5 +1,5 @@
 // lib/db.ts
-console.log("DATABASE_URL:", process.env.DATABASE_URL);
+console.log("DATABASE_URL:", "postgresql://doadmin:AVNS_UEyL881uTUtV4NllbG5@db-postgresql-nyc3-87454-do-user-772464-0.a.db.ondigitalocean.com:25060/defaultdb");
 
 if (!process.env.DATABASE_URL) {
   throw new Error(
@@ -19,7 +19,7 @@ export async function query<T extends QueryResultRow = any>(
 ): Promise<T[]> {
 
   const client = new Client({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: "postgresql://doadmin:AVNS_UEyL881uTUtV4NllbG5@db-postgresql-nyc3-87454-do-user-772464-0.a.db.ondigitalocean.com:25060/defaultdb",
     ssl: {
       rejectUnauthorized: false
     }
