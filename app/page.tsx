@@ -102,9 +102,9 @@ export default async function HomePage() {
           <Link href="/chicago" className="font-body text-sm text-brand-highlight font-semibold">View all →</Link>
         </div>
         {(events as any[]).map((ev, i) => (
-          <Link
+          <div
             key={i}
-            href={`/${ev.city_slug}/${ev.slug}`}
+           
             className="flex gap-4 items-start py-[15px] border-b border-brand-borderSubtle hover:bg-brand-surfaceAlt/50 -mx-2 px-2 rounded transition-colors"
           >
             <span className="font-body text-xs text-brand-highlight font-semibold min-w-[52px] pt-0.5">
@@ -115,7 +115,7 @@ export default async function HomePage() {
               <Badge type={ev.type} inviteOnly={ev.invite_only} />
             </div>
             <span className="font-body text-xs text-brand-textMuted text-right min-w-[70px]">{ev.organizer}</span>
-          </Link>
+          </div>
         ))}
       </section>
 
