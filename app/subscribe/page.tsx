@@ -136,7 +136,7 @@ export default function SubscribePage() {
         <button
           type="submit"
           disabled={status === "loading"}
-          className="w-full font-display text-sm font-bold py-3.5 rounded-lg bg-brand-text text-white disabled:opacity-60"
+          className="w-full font-display text-sm font-bold py-3.5 rounded-lg bg-brand-text disabled:opacity-60"
         >
           {status === "loading" ? "Subscribing..." : "Subscribe"}
         </button>
