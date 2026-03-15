@@ -72,7 +72,7 @@ export default async function HomePage() {
           Discover the events that matter in your city.
         </p>
         <div className="flex gap-3 justify-center flex-wrap">
-          <Link href="/chicago" className="font-display text-sm font-bold px-7 py-3 rounded-lg bg-brand-text text-white">
+          <Link href="/chicago" className="font-display text-sm font-bold px-7 py-3 rounded-lg bg-brand-text ">
             Browse Chicago Events →
           </Link>
           <Link href="/subscribe" className="font-display text-sm font-semibold px-7 py-3 rounded-lg border-[1.5px] border-brand-border text-brand-text">
